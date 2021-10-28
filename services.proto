@@ -1,0 +1,18 @@
+syntax = "proto3";
+package chitChat;
+option go_package = "github.com/fredsvend/Chit-Chat";
+
+service Chat {
+    rpc Publish(stream ChatMessage) returns (stream ChatMessage){}
+    rpc Broadcast(stream ChatMessage) returns (stream ChatMessage){}
+}
+
+message ChatMessage {
+    string senderName = 1;
+    string receiverName = 2;
+    string message = 3;
+}
+
+message Participant {
+    string name = 1;
+}
