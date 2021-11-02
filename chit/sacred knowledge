@@ -1,1 +1,0 @@
-when importing proto files, import the go.mod name and then the package name and it will work :)
